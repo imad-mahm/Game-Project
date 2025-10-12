@@ -1,9 +1,9 @@
-# Default ignored files
+﻿# Default ignored files
 /shelf/
 /workspace.xml
 # Rider ignored files
-/projectSettingsUpdater.xml
 /modules.xml
+/projectSettingsUpdater.xml
 /.idea.Game Files.iml
 /contentModel.xml
 # Editor-based HTTP Client requests
