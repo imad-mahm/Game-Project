@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class playerMovement : MonoBehaviour
 {
@@ -23,7 +24,7 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius;
-
+    
     
     
     
@@ -40,14 +41,22 @@ public class playerMovement : MonoBehaviour
     {
         moveHorizontal = Input.GetAxis("Horizontal");
         _isSprinting = Input.GetKey(KeyCode.LeftShift);
+        _currentSpeed = _isSprinting ?  sprintSpeed : walkSpeed;
         _isGrounded =  Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
-        
         
     }
 
     private void FixedUpdate()
     {
-        _currentSpeed = _isSprinting ?  sprintSpeed : walkSpeed;
-        playerRigidBody.velocity = new Vector2(moveHorizontal* _currentSpeed,playerRigidBody.velocity.y);
+        playerRigidBody.velocity = new Vector2(moveHorizontal* _currentSpeed ,playerRigidBody.velocity.y);
+      
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Killzone"))
+        {
+            SceneManager.LoadScene(0);
+        }
     }
 }
