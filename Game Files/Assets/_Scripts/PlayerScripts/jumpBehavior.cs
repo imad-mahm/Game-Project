@@ -10,13 +10,16 @@ public class jumpBehavior : MonoBehaviour
     public playerMovement playerMovement;
 
     [Header("Jump")] [SerializeField] private float jumpForce;
-    [SerializeField] private float jumpCooldown;
     [SerializeField] private float coyotetime;
     [SerializeField] private bool jumpbuffer;
     [SerializeField] private float buff;
+    [SerializeField]private float JumpCooldown;
     
     private float mayJump;
-    private float jumpBufferTimer=0;
+    private float jumpBufferTimer;
+    private float jumpCooldownTimer;
+    private bool jumped;
+    
 
     [SerializeField] private GameObject[] lightPlatforms;
     [SerializeField] private GameObject[] darkPlatforms;
@@ -29,6 +32,9 @@ public class jumpBehavior : MonoBehaviour
 
         lightPlatforms = GameObject.FindGameObjectsWithTag("Light");
         darkPlatforms = GameObject.FindGameObjectsWithTag("Dark");
+
+        jumpCooldownTimer = 0;
+        jumpBufferTimer = 0;
     }
 
     void Start()
@@ -58,18 +64,27 @@ public class jumpBehavior : MonoBehaviour
             jumpbuffer = false;
             jumpBufferTimer = 0;
         }
+
+        if (jumped)
+        {
+            jumpCooldownTimer -= Time.deltaTime;
+        }
         
         if (playerMovement.isGrounded)
         {
+            
             mayJump = coyotetime;
         }
         else
         {
             mayJump -= Time.deltaTime;
         }
-        if (jumpbuffer && mayJump >= 0)
+        if (jumpbuffer && mayJump > 0 && jumpCooldownTimer <= 0)
         {
             jumpbuffer=false;
+            mayJump = 0;
+            jumped = true;
+            jumpCooldownTimer = JumpCooldown;
             playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce);
             SwitchPlatforms();
         }
