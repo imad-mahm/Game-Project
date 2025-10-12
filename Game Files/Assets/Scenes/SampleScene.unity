@@ -990,7 +990,7 @@ Transform:
   m_GameObject: {fileID: 137650212}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.9, z: 0}
+  m_LocalPosition: {x: 0, y: -0.89, z: 0}
   m_LocalScale: {x: 0, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9679,10 +9679,10 @@ MonoBehaviour:
   playerRigidBody: {fileID: 1963660792}
   playerMovement: {fileID: 1963660790}
   jumpForce: 13
-  jumpCooldown: 0
   coyotetime: 0.2
   jumpbuffer: 0
   buff: 0.2
+  JumpCooldown: 0.3
   lightPlatforms: []
   darkPlatforms: []
 --- !u!114 &1963660790
