@@ -25,7 +25,7 @@ public class playerMovement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius;
     
-    
+    public Animator anim;
     
     
     
@@ -43,6 +43,14 @@ public class playerMovement : MonoBehaviour
         _isSprinting = Input.GetKey(KeyCode.LeftShift);
         _currentSpeed = _isSprinting ?  sprintSpeed : walkSpeed;
         _isGrounded =  Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        if (moveHorizontal != 0)
+        {
+            anim.SetBool("isWalking", true);
+        }
+        else
+        {
+            anim.SetBool("isWalking", false);
+        }
         
     }
 
