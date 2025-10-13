@@ -7,6 +7,8 @@ TagManager:
   - Light
   - Dark
   - Killzone
+  - Collectable
+  - Door
   layers:
   - Default
   - TransparentFX
