@@ -19,8 +19,8 @@ public class playerMovement : MonoBehaviour
     
     
     [Header("GroundCheck")]
-    private bool _isGrounded;
-    public bool isGrounded => _isGrounded;
+    public bool isGrounded;
+    // public bool isGrounded => _isGrounded;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private float groundCheckRadius;
@@ -42,7 +42,7 @@ public class playerMovement : MonoBehaviour
         moveHorizontal = Input.GetAxis("Horizontal");
         _isSprinting = Input.GetKey(KeyCode.LeftShift);
         _currentSpeed = _isSprinting ?  sprintSpeed : walkSpeed;
-        _isGrounded =  Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
+        isGrounded =  Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         if (moveHorizontal != 0)
         {
             anim.SetBool("isWalking", true);

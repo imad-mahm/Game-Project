@@ -89,7 +89,7 @@ public class jumpBehavior : MonoBehaviour
             jumpCooldownTimer = JumpCooldown;
             playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce);
             SwitchPlatforms();
-            anim.SetTrigger("isJumping");
+            // anim.SetTrigger("isJumping");
         }
 
         if (Input.GetKeyUp(KeyCode.Space) && playerRigidBody.velocity.y > 0)
@@ -98,7 +98,7 @@ public class jumpBehavior : MonoBehaviour
         }
         
         
-        
+        anim.SetBool("isGrounded", playerMovement.isGrounded);
     }
 
 
