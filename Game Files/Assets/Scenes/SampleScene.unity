@@ -9708,6 +9708,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   groundCheckRadius: 0.1
+  anim: {fileID: 1963660796}
 --- !u!70 &1963660791
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
