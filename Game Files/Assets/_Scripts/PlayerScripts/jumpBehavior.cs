@@ -23,6 +23,8 @@ public class jumpBehavior : MonoBehaviour
 
     [SerializeField] private GameObject[] lightPlatforms;
     [SerializeField] private GameObject[] darkPlatforms;
+    
+    public Animator anim;
 
 
     private void Awake()
@@ -35,6 +37,8 @@ public class jumpBehavior : MonoBehaviour
 
         jumpCooldownTimer = 0;
         jumpBufferTimer = 0;
+        
+        anim = GetComponent<Animator>();
     }
 
     void Start()
@@ -51,7 +55,6 @@ public class jumpBehavior : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpbuffer = true;
-            
         }
 
         if (jumpbuffer)
@@ -72,7 +75,6 @@ public class jumpBehavior : MonoBehaviour
         
         if (playerMovement.isGrounded)
         {
-            
             mayJump = coyotetime;
         }
         else
@@ -87,6 +89,7 @@ public class jumpBehavior : MonoBehaviour
             jumpCooldownTimer = JumpCooldown;
             playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce);
             SwitchPlatforms();
+            anim.SetTrigger("isJumping");
         }
 
         if (Input.GetKeyUp(KeyCode.Space) && playerRigidBody.velocity.y > 0)
