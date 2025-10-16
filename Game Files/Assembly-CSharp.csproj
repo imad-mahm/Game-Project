@@ -45,12 +45,13 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\_Scripts\ThemeSwitchScripts\PlatformSwitching.cs" />
     <Compile Include="Assets\_Scripts\ThemeManager.cs" />
+    <Compile Include="Assets\_Scripts\Managers\BackgroundMusicManager.cs" />
     <Compile Include="Assets\_Scripts\PlayerScripts\jumpBehavior.cs" />
     <Compile Include="Assets\_Scripts\PlayerScripts\playerMovement.cs" />
     <Compile Include="Assets\_Scripts\PlayerScripts\Collecting.cs" />
     <Compile Include="Assets\_Scripts\themePlatform.cs" />
-    <Compile Include="Assets\_Scripts\CharacterMovement.cs" />
     <Compile Include="Assets\_Scripts\themeBakground.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f2\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>

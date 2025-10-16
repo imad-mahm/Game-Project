@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Collecting : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class Collecting : MonoBehaviour
 
         if (other.gameObject.CompareTag("Door") && count == 3)
         {
-            //scene change
+            SceneManager.LoadScene("Level 2(escape Asylum)");
         }
     }
 }

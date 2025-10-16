@@ -9,6 +9,7 @@ TagManager:
   - Killzone
   - Collectable
   - Door
+  - LevelSwitch
   layers:
   - Default
   - TransparentFX

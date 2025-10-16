@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class jumpBehavior : MonoBehaviour
 {
@@ -29,24 +30,14 @@ public class jumpBehavior : MonoBehaviour
 
     private void Awake()
     {
+        
         playerMovement = GetComponent<playerMovement>();
         playerRigidBody = GetComponent<Rigidbody2D>();
-
-        lightPlatforms = GameObject.FindGameObjectsWithTag("Light");
-        darkPlatforms = GameObject.FindGameObjectsWithTag("Dark");
 
         jumpCooldownTimer = 0;
         jumpBufferTimer = 0;
         
         anim = GetComponent<Animator>();
-    }
-
-    void Start()
-    {
-        foreach (var darkPlatform in darkPlatforms)
-        {
-            darkPlatform.SetActive(false);
-        }
     }
 
 
@@ -88,8 +79,17 @@ public class jumpBehavior : MonoBehaviour
             jumped = true;
             jumpCooldownTimer = JumpCooldown;
             playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce);
-            SwitchPlatforms();
+            if (PlatformSwitching.Instance != null)
+            {
+                PlatformSwitching.Instance.SwitchPlatforms();
+            }
+
             // anim.SetTrigger("isJumping");
+            if (SceneManager.GetActiveScene().name != "Level 2(escape Assylum)")
+            {
+                BackgroundMusicManager.Instance.SwitchMusic();
+            }
+
         }
 
         if (Input.GetKeyUp(KeyCode.Space) && playerRigidBody.velocity.y > 0)
@@ -100,21 +100,5 @@ public class jumpBehavior : MonoBehaviour
         
         anim.SetBool("isGrounded", playerMovement.isGrounded);
     }
-
-
-
-
-
-    private void SwitchPlatforms()
-    {
-        foreach (var darkPlatform in darkPlatforms)
-        {
-            darkPlatform.SetActive(!darkPlatform.activeInHierarchy);
-        }
-
-        foreach (var lightPlatform in lightPlatforms)
-        {
-            lightPlatform.SetActive(!lightPlatform.activeInHierarchy);
-        }
-    }
+    
 }
