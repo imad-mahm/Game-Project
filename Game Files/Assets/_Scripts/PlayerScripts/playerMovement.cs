@@ -77,7 +77,7 @@ public class playerMovement : MonoBehaviour
     {
         if (other.CompareTag("Killzone"))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
 }

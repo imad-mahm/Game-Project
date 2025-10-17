@@ -83,9 +83,13 @@ public class jumpBehavior : MonoBehaviour
             WorldFlipEvent.TriggerWorldFlip();
 
             // anim.SetTrigger("isJumping");
+            
+            
+            // the following code can become a boolean to not be calculated
+            // i also think we can add it withing the switchMusic function for cleaner code
             if (SceneManager.GetActiveScene().name != "Level 2(escape Assylum)")
             {
-                BackgroundMusicManager.Instance.SwitchMusic();
+                BackgroundMusicManager.Instance.SwitchMusic(); 
             }
 
         }

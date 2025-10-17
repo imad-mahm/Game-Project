@@ -64,4 +64,21 @@ public class BackgroundMusicManager : MonoBehaviour
 
         isLightMode = !isLightMode;
     }
+    
+    public void PauseMusic()
+    {
+        if (isLightMode)
+            audioSourceLight.Pause();
+        else
+            audioSourceDark.Pause();
+    }
+
+    public void ResumeMusic()
+    {
+        if (isLightMode)
+            audioSourceLight.UnPause();
+        else
+            audioSourceDark.UnPause();
+    }
+
 }
