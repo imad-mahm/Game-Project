@@ -24,7 +24,7 @@ public class jumpBehavior : MonoBehaviour
 
     [SerializeField] private GameObject[] lightPlatforms;
     [SerializeField] private GameObject[] darkPlatforms;
-    
+    [SerializeField] private float Y;
     public Animator anim;
 
 
@@ -43,6 +43,7 @@ public class jumpBehavior : MonoBehaviour
 
     void Update()
     {
+        Y = playerRigidBody.velocity.y;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpbuffer = true;
@@ -94,7 +95,7 @@ public class jumpBehavior : MonoBehaviour
             playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, 0);
         }
         
-        
+        anim.SetFloat("Y-Speed",  playerRigidBody.velocity.y);
         anim.SetBool("isGrounded", playerMovement.isGrounded);
     }
     

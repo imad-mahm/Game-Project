@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class playerMovement : MonoBehaviour
 {
@@ -40,6 +41,18 @@ public class playerMovement : MonoBehaviour
     void Update()
     {
         moveHorizontal = Input.GetAxis("Horizontal");
+        if (moveHorizontal > 0)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = 0.8f;
+            transform.localScale = scale;
+        }
+        else if (moveHorizontal < 0)
+        {
+            Vector3 scale = transform.localScale;
+            scale.x = -0.8f;
+            transform.localScale = scale;
+        }
         _isSprinting = Input.GetKey(KeyCode.LeftShift);
         _currentSpeed = _isSprinting ?  sprintSpeed : walkSpeed;
         isGrounded =  Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
@@ -51,7 +64,7 @@ public class playerMovement : MonoBehaviour
         {
             anim.SetBool("isWalking", false);
         }
-        
+        anim.SetBool("isSprinting", _isSprinting);
     }
 
     private void FixedUpdate()
