@@ -816,11 +816,11 @@
     <Reference Include="Unity.2D.Psdimporter.Editor">
       <HintPath>C:\Users\user\Desktop\Game-Project\Game Files\Library\ScriptAssemblies\Unity.2D.Psdimporter.Editor.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.VisualScripting.State.Editor">
-      <HintPath>C:\Users\user\Desktop\Game-Project\Game Files\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
       <HintPath>C:\Users\user\Desktop\Game-Project\Game Files\Library\ScriptAssemblies\Unity.Postprocessing.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.State.Editor">
+      <HintPath>C:\Users\user\Desktop\Game-Project\Game Files\Library\ScriptAssemblies\Unity.VisualScripting.State.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
       <HintPath>C:\Users\user\Desktop\Game-Project\Game Files\Library\ScriptAssemblies\Unity.Mathematics.dll</HintPath>
