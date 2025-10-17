@@ -79,10 +79,7 @@ public class jumpBehavior : MonoBehaviour
             jumped = true;
             jumpCooldownTimer = JumpCooldown;
             playerRigidBody.velocity = new Vector2(playerRigidBody.velocity.x, jumpForce);
-            if (PlatformSwitching.Instance != null)
-            {
-                PlatformSwitching.Instance.SwitchPlatforms();
-            }
+            WorldFlipEvent.TriggerWorldFlip();
 
             // anim.SetTrigger("isJumping");
             if (SceneManager.GetActiveScene().name != "Level 2(escape Assylum)")

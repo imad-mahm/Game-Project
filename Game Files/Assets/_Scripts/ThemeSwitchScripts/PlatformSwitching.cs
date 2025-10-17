@@ -1,48 +1,38 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlatformSwitching : MonoBehaviour
 {
-    public static PlatformSwitching Instance;
     [SerializeField] private GameObject[] lightPlatforms;
     [SerializeField] private GameObject[] darkPlatforms;
-   
+
     private void Awake()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-
         lightPlatforms = GameObject.FindGameObjectsWithTag("Light");
         darkPlatforms = GameObject.FindGameObjectsWithTag("Dark");
     }
-    void Start()
+
+    private void OnEnable()
     {
-        foreach (var darkPlatform in darkPlatforms)
-        {
-            darkPlatform.SetActive(false);
-        }
-        foreach (var p in lightPlatforms) p.SetActive(true);
-        foreach (var p in darkPlatforms) p.SetActive(false);
+        WorldFlipEvent.OnWorldFlipped += SwitchPlatforms;
     }
 
+    private void OnDisable()
+    {
+        WorldFlipEvent.OnWorldFlipped -= SwitchPlatforms;
+    }
 
-    public void SwitchPlatforms()
+    private void Start()
     {
         foreach (var darkPlatform in darkPlatforms)
-        {
-            darkPlatform.SetActive(!darkPlatform.activeInHierarchy);
-        }
+            darkPlatform.SetActive(false);
+    }
+
+    private void SwitchPlatforms()
+    {
+        foreach (var darkPlatform in darkPlatforms)
+            darkPlatform.SetActive(!darkPlatform.activeSelf);
 
         foreach (var lightPlatform in lightPlatforms)
-        {
-            lightPlatform.SetActive(!lightPlatform.activeInHierarchy);
-        }
+            lightPlatform.SetActive(!lightPlatform.activeSelf);
     }
 }
