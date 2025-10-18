@@ -12,8 +12,8 @@ public class PlatformSwitching : MonoBehaviour
     {
         lightPlatforms = GameObject.FindGameObjectsWithTag("Light");
         darkPlatforms = GameObject.FindGameObjectsWithTag("Dark");
-        //futureBackground = GameObject.FindGameObjectsWithTag("Cyberpunk");
-        //pastBackground   = GameObject.FindGameObjectsWithTag("DarkSouls");
+        futureBackground = GameObject.FindGameObjectsWithTag("Cyberpunk");
+        pastBackground   = GameObject.FindGameObjectsWithTag("DarkSouls");
 
     }
 
@@ -41,10 +41,10 @@ public class PlatformSwitching : MonoBehaviour
             darkPlatform.SetActive(!darkPlatform.activeSelf);
         foreach (var lightPlatform in lightPlatforms)
             lightPlatform.SetActive(!lightPlatform.activeSelf);
-        //foreach (var background in futureBackground)
-        //    background.SetActive(!background.activeSelf);
-        //foreach (var background in pastBackground)
-        //    background.SetActive(!background.activeSelf);
+        foreach (var background in futureBackground)
+            background.SetActive(!background.activeSelf);
+        foreach (var background in pastBackground)
+            background.SetActive(!background.activeSelf);
 
     }
 }
