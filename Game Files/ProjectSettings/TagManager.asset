@@ -48,3 +48,6 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: doortext
+    uniqueID: 251238921
+    locked: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -28,20 +29,28 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        pauseMusic = GameObject.FindGameObjectWithTag("UIAudio").GetComponent<AudioSource>();
+        
     }
     void Start()
     {
+        pauseMusic = GameObject.FindGameObjectWithTag("UIAudio").GetComponent<AudioSource>();
         
-        pauseMusic.Play();
         pauseMusic.Pause();
     }
-    
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            TogglePause();
+            if (optionsMenu.activeSelf)
+            {
+                CloseOptions();
+            }
+            else
+            {
+                TogglePause();
+            }
+            //TogglePause();
         }
     }
 
@@ -79,16 +88,17 @@ public class GameManager : MonoBehaviour
     
     public void ResumeGame()
     {
-        Debug.Log("Resuming game");
-        Time.timeScale = 1f;
-        isPaused = false;
-        pauseMenu.SetActive(false);
+        TogglePause();
     }
     
     public void RestartLevel()
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (BackgroundMusicManager.Instance != null)
+        {
+            BackgroundMusicManager.Instance.ResumeMusic();
+        }
     }
     public void OpenOptions()
     {
@@ -101,6 +111,12 @@ public class GameManager : MonoBehaviour
         optionsMenu.SetActive(false);
         pauseMenu.SetActive(true);
     }
-    
+    public void ExitToMainMenu()
+    {
+        SceneManager.LoadScene(0);
+        
+    }
+
+
 
 }

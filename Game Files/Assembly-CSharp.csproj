@@ -46,17 +46,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\_Scripts\ThemeSwitchScripts\PlatformSwitching.cs" />
-    <Compile Include="Assets\_Scripts\ThemeManager.cs" />
     <Compile Include="Assets\_Scripts\Managers\BackgroundMusicManager.cs" />
+    <Compile Include="Assets\_Scripts\UI Scripts\Dialogue.cs" />
     <Compile Include="Assets\_Scripts\PlayerScripts\jumpBehavior.cs" />
     <Compile Include="Assets\_Scripts\CameraScripts\CameraIdleMovement.cs" />
     <Compile Include="Assets\_Scripts\PlayerScripts\playerMovement.cs" />
     <Compile Include="Assets\_Scripts\PlayerScripts\Collecting.cs" />
-    <Compile Include="Assets\_Scripts\themePlatform.cs" />
     <Compile Include="Assets\_Scripts\Managers\MainMenuManager.cs" />
     <Compile Include="Assets\_Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\_Scripts\UI Scripts\Collectables.cs" />
     <Compile Include="Assets\_Scripts\ThemeSwitchScripts\WorldFlpEvent.cs" />
-    <Compile Include="Assets\_Scripts\themeBakground.cs" />
+    <Compile Include="Assets\_Scripts\Door.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
