@@ -4,7 +4,7 @@ using UnityEngine.SceneManagement;
 public class Door : MonoBehaviour
 {
     [SerializeField] private GameObject popup; 
-    [SerializeField] private Collecting playerCollecting;
+    //[SerializeField] private Collecting playerCollecting;
 
     private void Start()
     {
@@ -17,10 +17,10 @@ public class Door : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             //Debug.Log("Player entered door");
-            if (playerCollecting != null)
-            {
+            //if (playerCollecting != null)
+            //{
                 //Debug.Log("Player has collected " + playerCollecting.Count + " items");
-                if (playerCollecting.Count >= 3)
+                if ( Collectables.Count >= 3)
                 {
                     SceneManager.LoadScene(2);
                 }
@@ -28,7 +28,7 @@ public class Door : MonoBehaviour
                 {
                     popup?.SetActive(true);
                 }
-            }
+           // }
         }
     }
 

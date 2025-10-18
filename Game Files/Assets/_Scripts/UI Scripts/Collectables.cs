@@ -4,7 +4,7 @@ using UnityEngine;
 public class Collectables : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
-    [SerializeField] private Collecting playerCollecting;
+    public static int Count;
     void Start()
     {
         
@@ -13,6 +13,6 @@ public class Collectables : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textComponent.text = "Coin Count: " + playerCollecting.Count.ToString();
+        textComponent.text = "Clock Count: " + Count.ToString();
     }
 }
