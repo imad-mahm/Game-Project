@@ -4,6 +4,9 @@ public class PlatformSwitching : MonoBehaviour
 {
     [SerializeField] private GameObject[] lightPlatforms;
     [SerializeField] private GameObject[] darkPlatforms;
+    [SerializeField] private GameObject pastBackground;
+    [SerializeField] private GameObject futureBackground;
+
 
     private void Awake()
     {
@@ -34,5 +37,9 @@ public class PlatformSwitching : MonoBehaviour
 
         foreach (var lightPlatform in lightPlatforms)
             lightPlatform.SetActive(!lightPlatform.activeSelf);
+        
+        futureBackground.SetActive(!futureBackground.activeSelf);
+        pastBackground.SetActive(!pastBackground.activeSelf);
+
     }
 }
