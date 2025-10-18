@@ -21,10 +21,6 @@ public class jumpBehavior : MonoBehaviour
     private float jumpCooldownTimer;
     private bool jumped;
     
-
-    [SerializeField] private GameObject[] lightPlatforms;
-    [SerializeField] private GameObject[] darkPlatforms;
-    [SerializeField] private float Y;
     public Animator anim;
 
 
@@ -43,7 +39,6 @@ public class jumpBehavior : MonoBehaviour
 
     void Update()
     {
-        Y = playerRigidBody.velocity.y;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpbuffer = true;
