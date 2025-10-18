@@ -11,6 +11,8 @@ TagManager:
   - Door
   - LevelSwitch
   - UIAudio
+  - Cyberpunk
+  - DarkSouls
   layers:
   - Default
   - TransparentFX
