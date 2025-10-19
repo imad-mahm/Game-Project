@@ -11,6 +11,7 @@ public class GameUICanvas : MonoBehaviour
     public GameObject pausePanel;    
     public GameObject optionsPanel;
     public GameObject dialoguePanel;
+    public GameObject creditPanel;
 
     void Awake()
     {
@@ -34,6 +35,7 @@ public class GameUICanvas : MonoBehaviour
         pausePanel?.SetActive(false);
         optionsPanel?.SetActive(false);
         dialoguePanel?.SetActive(false);
+        creditPanel?.SetActive(false);
         
         if (scene.buildIndex == 0)
         {

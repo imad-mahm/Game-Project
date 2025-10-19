@@ -9,7 +9,13 @@ public class Witch : MonoBehaviour
    {
       if (other.gameObject.CompareTag("Player"))
       {
-         //add ui that game is over
+         GameUICanvas.Instance.creditPanel.SetActive(true);
+         GameUICanvas.Instance.dialoguePanel.SetActive(false);
+         GameUICanvas.Instance.gameUIPanel.SetActive(false);
+         GameUICanvas.Instance.mainMenuPanel.SetActive(false);
+         GameUICanvas.Instance.optionsPanel.SetActive(false);
+         GameUICanvas.Instance.pausePanel.SetActive(false);
+         BackgroundMusicManager.Instance.PauseMusic();
       }
    }
 }

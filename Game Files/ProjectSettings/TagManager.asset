@@ -16,6 +16,7 @@ TagManager:
   - Zombie
   - ZombieKillzone
   - ZombieWeakpoint
+  - witch
   layers:
   - Default
   - TransparentFX

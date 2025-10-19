@@ -82,5 +82,16 @@ public class playerMovement : MonoBehaviour
         {
             SceneManager.LoadScene(2);
         }
+        else if (other.gameObject.CompareTag("witch"))
+        {
+            BackgroundMusicManager.Instance.PauseMusic();
+            GameUICanvas.Instance.creditPanel.SetActive(true);
+            GameUICanvas.Instance.dialoguePanel.SetActive(false);
+            GameUICanvas.Instance.gameUIPanel.SetActive(false);
+            GameUICanvas.Instance.mainMenuPanel.SetActive(false);
+            GameUICanvas.Instance.optionsPanel.SetActive(false);
+            GameUICanvas.Instance.pausePanel.SetActive(false);
+           
+        }
     }
 }
