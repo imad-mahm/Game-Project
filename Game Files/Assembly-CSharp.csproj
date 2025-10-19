@@ -54,6 +54,7 @@
     <Compile Include="Assets\_Scripts\PlayerScripts\playerMovement.cs" />
     <Compile Include="Assets\_Scripts\PlayerScripts\Collecting.cs" />
     <Compile Include="Assets\_Scripts\Enemies\ZombieMovement.cs" />
+    <Compile Include="Assets\_Scripts\PlayerScripts\GroundCheck.cs" />
     <Compile Include="Assets\_Scripts\Enemies\Witch.cs" />
     <Compile Include="Assets\_Scripts\Managers\MainMenuManager.cs" />
     <Compile Include="Assets\_Scripts\Managers\GameManager.cs" />

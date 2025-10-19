@@ -15,6 +15,7 @@ TagManager:
   - DarkSouls
   - Zombie
   - ZombieKillzone
+  - ZombieWeakpoint
   layers:
   - Default
   - TransparentFX
