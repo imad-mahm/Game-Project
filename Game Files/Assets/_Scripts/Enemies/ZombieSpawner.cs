@@ -7,6 +7,7 @@ public class ZombieSpawner : MonoBehaviour
     public GameObject zombiePrefab; // The enemy prefab
     public float spawnInterval = 2f; // Time between spawns
     public Transform[] spawnPoints; // Array of spawn points
+    public Animator anim;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class ZombieSpawner : MonoBehaviour
 
     void SpawnEnemy()
     {
+        anim.SetBool("isSpawning", true);
         if (spawnPoints.Length == 0) return; // No spawn points available
 
         // Choose a random spawn point
@@ -23,17 +25,24 @@ public class ZombieSpawner : MonoBehaviour
 
         // Instantiate the enemy prefab at the spawn point
         Instantiate(zombiePrefab, spawnPoint.position, Quaternion.identity);
+        //WaitForSeconds(0.5f);
+        //anim.SetBool("isSpawning", false);
     }
 
     private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
+        //Gizmos.color = Color.red;
         foreach (Transform spawnPoint in spawnPoints)
         {
             if (spawnPoint != null)
             {
-                Gizmos.DrawSphere(spawnPoint.position, 0.5f);
+                //Gizmos.DrawSphere(spawnPoint.position, 0.5f);
             }
         }
+    }
+
+    public void StopSpawningAnimation()
+    {
+        anim.SetBool("isSpawning", false);
     }
 }
