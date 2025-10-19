@@ -51,7 +51,7 @@ public class GameManager : MonoBehaviour
             {
                 TogglePause();
             }
-            //TogglePause();
+          //  TogglePause();
         }
     }
 
@@ -89,6 +89,7 @@ public class GameManager : MonoBehaviour
     
     public void ResumeGame()
     {
+        Debug.Log("resuming");
         TogglePause();
     }
     
