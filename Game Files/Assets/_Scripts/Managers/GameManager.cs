@@ -122,6 +122,7 @@ public class GameManager : MonoBehaviour
     public void PlayGame()
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        //ameUICanvas.Instance.dialoguePanel.SetActive(true);
     }
     public void QuitGame()
     {

@@ -1644,8 +1644,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textComponent: {fileID: 1849234858}
   lines:
-  - 'Where am i, where did he take me. I must get back, '
-  - He must be defeated
+  - 'Where am i, where did she send me. I must get back, '
+  - She must be caught
   textSpeed: 0.08
 --- !u!114 &649549088
 MonoBehaviour:

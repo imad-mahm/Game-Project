@@ -43,6 +43,7 @@ public class GameUICanvas : MonoBehaviour
         }
         else
         {
+            if (scene.buildIndex == 1) dialoguePanel.SetActive(true);
         
             if (gameUIPanel != null) gameUIPanel.SetActive(true);
             //DialoguePanel?.SetActive(false);
