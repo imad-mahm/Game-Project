@@ -4,7 +4,7 @@ using UnityEngine;
 public class Collectables : MonoBehaviour
 {
     public TextMeshProUGUI textComponent;
-    public static int Count;
+    [SerializeField]public static int Count;
     void Start()
     {
         

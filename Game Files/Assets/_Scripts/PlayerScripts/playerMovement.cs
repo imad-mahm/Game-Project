@@ -74,6 +74,10 @@ public class playerMovement : MonoBehaviour
         if (other.CompareTag("Killzone"))
         {
             SceneManager.LoadScene(1);
+            if (!BackgroundMusicManager.Instance.isLightMode)
+            {
+                BackgroundMusicManager.Instance.SwitchMusic();
+            }
         } else if (other.CompareTag("Zombie"))
         {
             SceneManager.LoadScene(2);

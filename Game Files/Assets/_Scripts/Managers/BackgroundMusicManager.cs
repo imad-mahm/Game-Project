@@ -7,7 +7,7 @@ public class BackgroundMusicManager : MonoBehaviour
     public AudioSource audioSourceDark;
     public static BackgroundMusicManager Instance;
 
-    private bool isLightMode = true;
+    public bool isLightMode = true;
 
     private void Awake()
     {
