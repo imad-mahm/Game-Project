@@ -13,8 +13,8 @@ public class GameManager : MonoBehaviour
     public bool isPaused = false;
     
     [Header("UI References")]
-    public GameObject pauseMenu;
-    public GameObject optionsMenu;
+    //public GameObject pauseMenu;
+    //public GameObject optionsMenu;
     
     [Header("Audio")]
     private AudioSource pauseMusic;
@@ -43,7 +43,7 @@ public class GameManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            if (optionsMenu.activeSelf)
+            if (GameUICanvas.Instance.optionsPanel.activeSelf)
             {
                 CloseOptions();
             }
@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         if (isPaused)
         {
             Time.timeScale = 0f;  
-            pauseMenu.SetActive(true);
+            GameUICanvas.Instance.pausePanel.SetActive(true);
             if (BackgroundMusicManager.Instance != null)
             {
                 BackgroundMusicManager.Instance.PauseMusic();
@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour
         else
         {
             Time.timeScale = 1f;
-            pauseMenu.SetActive(false);
+            GameUICanvas.Instance.pausePanel.SetActive(false);
             if (BackgroundMusicManager.Instance != null)
             {
                 BackgroundMusicManager.Instance.ResumeMusic();
@@ -104,14 +104,14 @@ public class GameManager : MonoBehaviour
     }
     public void OpenOptions()
     {
-        pauseMenu.SetActive(false);
-        optionsMenu.SetActive(true);
+        GameUICanvas.Instance.pausePanel.SetActive(false);
+        GameUICanvas.Instance.optionsPanel.SetActive(true);
     }
 
     public void CloseOptions()
     {
-        optionsMenu.SetActive(false);
-        pauseMenu.SetActive(true);
+        GameUICanvas.Instance.optionsPanel.SetActive(false);
+        GameUICanvas.Instance.pausePanel.SetActive(true);
     }
     public void ExitToMainMenu()
     {

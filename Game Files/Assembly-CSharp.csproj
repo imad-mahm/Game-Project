@@ -56,6 +56,7 @@
     <Compile Include="Assets\_Scripts\Managers\MainMenuManager.cs" />
     <Compile Include="Assets\_Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\_Scripts\UI Scripts\Collectables.cs" />
+    <Compile Include="Assets\_Scripts\Managers\EventSystemManager.cs" />
     <Compile Include="Assets\_Scripts\ThemeSwitchScripts\WorldFlpEvent.cs" />
     <Compile Include="Assets\_Scripts\Door.cs" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
