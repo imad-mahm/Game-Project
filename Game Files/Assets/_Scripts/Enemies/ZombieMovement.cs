@@ -7,6 +7,7 @@ public class ZombieMovement : MonoBehaviour
     public float speed = 2f; 
     private SpriteRenderer spriteRenderer; 
     [SerializeField] private Animator animator;
+    private bool dead = false;
     
     private void Start()
     {
@@ -15,27 +16,24 @@ public class ZombieMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!animator.GetBool("isDead"))
-        {
-            transform.Translate(Vector3.left * (speed * Time.deltaTime));
-            animator.SetBool("isWalking", true);
-        }
-
+        transform.Translate(Vector3.left * (speed * Time.deltaTime));
+        animator.SetBool("isWalking", true);
         //if (spriteRenderer)
-       // {
-       //     spriteRenderer.flipX = true; 
-       // }
+        // {
+        //     spriteRenderer.flipX = true; 
+        // }
     }
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Zombie Triggered");
-        if (collision.CompareTag("ZombieKillzone"))
+        if (collision.CompareTag("ZombieKillzone") && !dead)
         {
+            Debug.Log("Zombie Triggered");
             Debug.Log("Zombie dead");
             animator.SetBool("isDead", true);
             speed = 0f;
             Debug.Log("Zombie Dead");
+            dead = true;
         }
     }
 
