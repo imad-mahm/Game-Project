@@ -82,7 +82,7 @@ public class jumpBehavior : MonoBehaviour
             
             // the following code can become a boolean to not be calculated
             // i also think we can add it withing the switchMusic function for cleaner code
-            if (SceneManager.GetActiveScene().name != "Level 2(escape Assylum)")
+            if (SceneManager.GetActiveScene().buildIndex != 2)
             {
                 BackgroundMusicManager.Instance.SwitchMusic(); 
             }

@@ -78,6 +78,9 @@ public class playerMovement : MonoBehaviour
         if (other.CompareTag("Killzone"))
         {
             SceneManager.LoadScene(1);
+        } else if (other.CompareTag("Zombie"))
+        {
+            SceneManager.LoadScene(2);
         }
     }
 }

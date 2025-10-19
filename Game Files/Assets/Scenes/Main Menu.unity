@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 65270649}
   - component: {fileID: 65270648}
   - component: {fileID: 65270647}
+  - component: {fileID: 65270650}
   m_Layer: 0
   m_Name: EventSystem
   m_TagString: Untagged
@@ -268,6 +269,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &65270650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 65270646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f8ff24f48f34c4eab6a103ede5092b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Instance: {fileID: 0}
 --- !u!1 &103278134
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,8 +611,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isPaused: 0
-  pauseMenu: {fileID: 1832017103}
-  optionsMenu: {fileID: 1941053873}
 --- !u!4 &229136331
 Transform:
   m_ObjectHideFlags: 0
@@ -1233,8 +1245,8 @@ MonoBehaviour:
   mainMenuPanel: {fileID: 17963209}
   gameUIPanel: {fileID: 891449747}
   pausePanel: {fileID: 1832017103}
-  OptionsPanel: {fileID: 1941053873}
-  DialoguePanel: {fileID: 649549085}
+  optionsPanel: {fileID: 1941053873}
+  dialoguePanel: {fileID: 649549085}
 --- !u!1 &526976423
 GameObject:
   m_ObjectHideFlags: 0
